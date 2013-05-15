@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item type="id" name="build_text" />
+    <item type="id" name="email" />
+    <item type="id" name="name" />
+    <item type="id" name="note" />
+    <item type="id" name="send" />
+    <item type="id" name="data_collected" />
+</resources>

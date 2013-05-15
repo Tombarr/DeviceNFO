@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <!-- Name -->
+    <EditText
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:maxLength="256"
+    	android:inputType="textPersonName"
+    	android:imeOptions="actionNext"
+    	android:textSize="12pt"
+    	android:singleLine="true"
+    	android:hint="@string/name_hint"
+    	android:id="@id/name" />
+    
+    <!-- Email -->
+    <EditText
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:maxLength="256"
+    	android:inputType="textEmailAddress"
+    	android:imeOptions="actionNext"
+    	android:textSize="12pt"
+    	android:singleLine="true"
+    	android:hint="@string/email_hint"
+    	android:id="@id/email"
+    	android:layout_below="@id/name" />
+    
+    <!-- Note -->
+    <EditText
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:inputType="textShortMessage|textMultiLine"
+    	android:imeOptions="actionSend"
+    	android:textSize="9pt"
+    	android:lines="1"
+    	android:maxLines="3"
+    	android:maxLength="500"
+    	android:hint="@string/note_hint"
+    	android:id="@id/note"
+    	android:layout_below="@id/email" />
+    
+    <!-- Send -->
+    <Button
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/send"
+    	android:textSize="12pt"
+    	android:id="@id/send"
+    	android:layout_below="@id/note" />
+    
+    <!-- Data note -->
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center"
+    	android:layout_centerHorizontal="true"
+    	android:textSize="7pt"
+    	android:text="@string/data_collected"
+    	android:layout_below="@id/send"
+    	android:id="@id/data_collected" />
+    
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+    	android:layout_height="1dp"
+    	android:layout_below="@id/data_collected"
+        android:background="@android:color/black" />
+    
+    <!-- Info -->
+    <ScrollView
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:fadingEdgeLength="0dp"
+    	android:fadingEdge="none"
+    	android:fillViewport="true"
+    	android:layout_below="@id/data_collected">
+     
+        <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textIsSelectable="true"
+	        android:id="@id/build_text" />
+        
+    </ScrollView>
+
+</RelativeLayout>

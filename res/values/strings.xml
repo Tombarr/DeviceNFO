@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DeviceNFO</string>
+    <string name="app_desc">Send device information and get rooted!</string>
+    <string name="send">Send</string>
+    <string name="send_caps">SEND</string>
+    <string name="email_hint">Email</string>
+    <string name="name_hint">Name</string>
+    <string name="note_hint">Note (optional)</string>
+	<string name="error_text">An error occurred, information could be obained.</string>
+	<string name="unknown_error">An unknown error occurred.</string>
+	<string name="no_name">Please enter your name.</string>
+	<string name="no_email">Please enter an email address.</string>
+    <string name="invalid_email">Please enter a valid email.</string>
+    <string name="data_collected">The following info will be sent:</string>
+	
+</resources>
