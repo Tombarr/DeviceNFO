@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.Locale;
 import java.util.regex.Pattern;
 
 // Crouton Packages
@@ -53,7 +52,6 @@ import android.widget.TextView;
 public final class InfoActivity extends Activity
 	implements View.OnClickListener {
 	
-	private static final String HTTP_METHOD = "POST";
 	private static final String BUILD_PROPS = "build.props";
 	private static final SparseArray<String> mPhoneArray = new SparseArray<String>();
 	static {
@@ -144,30 +142,14 @@ public final class InfoActivity extends Activity
 		}
 	}
 	
-	/** Encodes our POST request in Javascript then opens the browser. */
+	/** Encodes our GET request and starts an {@link Activity} to VIEW it. */
 	public final void send(final CharSequence mName, final CharSequence mEmail, final CharSequence mNote)
 		throws UnsupportedEncodingException {
-	    final String jsUrl = "javascript:" + 
-	        "var to = 'http://rootdoes.com/contact.php';" +
-	        "var p = {name:'" + URLEncoder.encode(mName.toString(), "UTF-8") +
-	        	   "',email:'" + URLEncoder.encode(mEmail.toString(), "UTF-8") +
-	        	   "',info:'" + URLEncoder.encode(mDeviceText, "UTF-8") +
-	        	   "',note:'" + URLEncoder.encode(mNote.toString(), "UTF-8") + "'};" +
-	        "var myForm = document.createElement('form');" +
-	        "myForm.method='" + HTTP_METHOD.toUpperCase(Locale.US) + "';" +
-	        "myForm.action = to;" +
-	        "for (var k in p) {" +
-	            "var myInput = document.createElement('input');" +
-	            "myInput.setAttribute('type', 'text');" +
-	            "myInput.setAttribute('name', k);" +
-	            "myInput.setAttribute('value', p[k]);" +
-	            "myForm.appendChild(myInput);" +
-	        "}" +
-	        "document.body.appendChild(myForm);" +
-	        "myForm.submit() ;" +
-	        "document.body.removeChild(myForm);";
-	    final Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jsUrl));
-	    startActivity(browserIntent);
+		startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://rootdoes.com/contact").buildUpon()
+				.appendQueryParameter("name", URLEncoder.encode(mName.toString(), "UTF-8"))
+				.appendQueryParameter("email", URLEncoder.encode(mEmail.toString(), "UTF-8"))
+				.appendQueryParameter("note", URLEncoder.encode(mNote.toString(), "UTF-8"))
+				.appendQueryParameter("info", URLEncoder.encode(mDeviceText, "UTF-8")).build()));
 	}
 	
 	/** Remove all fields, no data to submit. */

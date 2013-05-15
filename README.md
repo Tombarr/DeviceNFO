@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 DeviceNFO for Android
 ================
-Simple utility app for obtaining information about the device and sending it to an online form via the POST method, all without ANY permissions! The idea is to be as upfront as possible with the user by showing exactly what information is collected.
-This app sends data to [RootDoes][2] for the purpose of rooting devices within the Greater Boston Area, however it could easily be adapted for many other purposes. The data collected is compiled into a JavaScript form and POSTed to a web server.
+Simple utility app for obtaining information about the device and sending it to an online form via the GET method, all without ANY permissions! The idea is to be as upfront as possible with the user by showing exactly what information is collected.
+This app sends data to [RootDoes][2] for the purpose of rooting devices within the Greater Boston Area, however it could easily be adapted for many other purposes. The data collected is compiled into a URL and sent via GET query parameters to a web server.
 
 Contribute
 -------
@@ -26,9 +25,3 @@ limitations under the License.
 
  [1]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact@tombarrasso.com&lc=US&item_name=Thomas%20Barrasso&item_number=devicenfo&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
  [2]: http://rootdoes.com
-=======
-DeviceNFO
-=========
-
-DeviceNFO
->>>>>>> 73562e5ba648232a55dceea2463d4ad90ee74f00
